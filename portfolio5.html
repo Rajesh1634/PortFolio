@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RAJESH KANNAN R P Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      z-index: 999;
+    }
+
+    nav a {
+      color: #00e6e6;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    header {
+      padding: 100px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #00e6e6;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      color: #ccc;
+    }
+
+    section {
+      padding: 60px 20px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .box {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border: 2px solid #00e6e6;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.02);
+      border-color: #ffcc00;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: #00e6e6;
+      margin-bottom: 20px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 100%;
+    }
+
+    .project-box {
+      background-color: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border: 2px solid #00e6e6;
+      border-radius: 10px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .project-box:hover {
+      transform: translateY(-5px);
+      border-color: #ffcc00;
+    }
+
+    .split-box {
+      flex: 1 1 45%;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 2px solid #00e6e6;
+      border-radius: 10px;
+      padding: 30px;
+      min-width: 280px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .split-box:hover {
+      transform: scale(1.02);
+      border-color: #ffcc00;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #eee;
+    }
+
+    .contact-icons {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .contact-icons a {
+      margin: 0 15px;
+      font-size: 2rem;
+      color: #00e6e6;
+      transition: transform 0.3s;
+    }
+
+    .contact-icons a:hover {
+      transform: scale(1.2);
+      color: #ffcc00;
+    }
+
+    footer {
+      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Floating bubbles */
+    .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      animation: rise 20s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-1000px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .bubble:nth-child(odd) {
+      width: 25px;
+      height: 25px;
+      animation-duration: 25s;
+    }
+
+    .bubble:nth-child(even) {
+      width: 15px;
+      height: 15px;
+      animation-duration: 18s;
+    }
+
+    @media (max-width: 768px) {
+      .split-box {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bubbles">
+    <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="bubble" style="left: 20%; animation-delay: 2s;"></div>
+    <div class="bubble" style="left: 30%; animation-delay: 4s;"></div>
+    <div class="bubble" style="left: 40%; animation-delay: 6s;"></div>
+    <div class="bubble" style="left: 50%; animation-delay: 8s;"></div>
+    <div class="bubble" style="left: 60%; animation-delay: 1s;"></div>
+    <div class="bubble" style="left: 70%; animation-delay: 3s;"></div>
+    <div class="bubble" style="left: 80%; animation-delay: 5s;"></div>
+    <div class="bubble" style="left: 90%; animation-delay: 7s;"></div>
+  </div>
+
+  <nav>
+    <a href="#about">ABOUT ME</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#education">EDUCATION</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#certifications">CERTIFICATIONS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <header>
+    <h1>RAJESH KANNAN R P</h1>
+    <p>Java Developer | Data Analyst </p>
+  </header>
+
+  <section id="about">
+    <div class="box">
+      <h2>ABOUT ME</h2>
+      <p>I am a motivated IT graduate with expertise in SQL, Java and web technologies like HTML and CSS. Skilled in tools such as MySQL, PowerBI, Excel and GitHub, I bring strong problem-solving abilities and a passion for learning. My organizational skills, adaptability, and teamwork make me a great fit for entry-level software development roles.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="box">
+      <h2>PROJECTS</h2>
+      <div class="project-grid">
+        <div class="project-box"><strong>CAR SALES ANALYSIS - EXCEL DASHBOARD</strong><br>Developed a Car Sales Analysis Dashboard using Excel to track sales performance, revenue trends, and customer demographics. Utilized pivot tables, charts, and conditional formatting to visualize key metrics and identify sales patterns. Provided insights into top-selling models, regional sales distribution, and pricing trends for better decision-making.</div>
+
+        <div class="project-box"><strong>QC VARIANCE ANALYSIS - POWERBI DASHBOARD</strong><br>Developed and deployed a QC Variance Dashboard in Power BI to monitor quality control performance for September 2023. Visualize key metrics such as Delivered, Error Rates, Backlogs, and QC Capacity, enabling the identification and resolution of operational bottlenecks. Enhanced decision-making by providing actionable insights into quality control processes.</div>
+
+        <div class="project-box"><strong>LOAN MANAGEMENT SYSTEM - SQL PROJECT
+(OCT</strong><br>Developed a Loan Management System using SQL to integrate and analyze datasets. Implemented triggers for automated updates, categorized customers based on income, calculated interest rates, and performed mismatch detection. Leveraged stored procedures and joins to ensure data accuracy and provide actionable insights for effective decision-making.</div>
+
+        <div class="project-box"><strong>INTELLINOTE - PYTHON PROJECT</strong><br>Developed IntelliNote (Notes Summarization Technique), an AI-based notes summarization application using Python and NLP, leveraging OpenAI to condense lengthy notes into concise summaries. Designed a user -friendly interface enabling users to upload PDF for automated summarization, enhancing efficiency and quick information retrieval.</div>
+
+        <div class="project-box"><strong>ENHANCED LEARNING MANAGEMENT SYSTEM - FRONTEND PROJECT</strong><br>Developed an Enhanced Learning Management System (ELMS) using HTML, CSS, JQuery and JavaScript to provide a centralized platform for seamless access to study materials. Ensured crossdepartment accessibility and efficient resource management, addressing common challenges faced by students during exam preparation.</div>
+
+        <div class="project-box"><strong>YOUTUBE CLONE</strong><br>I’ve skillfully blended HTML, CSS, and JavaScript to craft a dynamic platform with a robust infrastructure. This project showcases my dedication, innovative flair, and mastery of cutting-edge web technologies</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="split-box" id="education">
+      <h2>EDUCATION</h2>
+      <p><strong>PSNA College of Engineering and Technology</strong><br>
+      B.Tech in Information Technology<br>
+      2024<br>
+      CGPA: 8.25<br>
+      Dindigul</p><br>
+
+
+      <p><strong>THE TVS LAKSHMI MHSS</strong><br>
+      Class - 12th <br>
+      2020<br>
+      Madurai</p><br>
+
+
+      <p><strong>THE SEVENTH DAY ADVENTIST MHSS</strong><br>
+      Class - 10th <br>
+      2018<br>
+      Madurai</p>
+
+
+    </div>
+
+
+    <div class="split-box" id="skills">
+      <h2>SKILLS</h2>
+      <ul>
+        <li><strong>Programming Languages:</strong>  Java, SQL, Python, HTML, CSS.</li>
+        <li><strong>Technologies:</strong>MySQL, IDLE, PowerBI, Git, GitHub, Excel, VS Code, MS Office Suite.</li>
+        <li><strong>Soft Skills:</strong>Proactive and Self-motivated, Exceptional organizational skills, Adaptability, Time management, Active listening.</li>
+        <li><strong>Relevant Coursework:</strong> Object-Oriented Programming Language, Database Management System, Data Structures and Algorithm.</li>
+        <li><strong>Languages Known:</strong> English, Tamil.</li>
+
+      </ul>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="box">
+      <h2>CERTIFICATIONS</h2>
+      <ul>
+        <li>Completed Professional MYSQL Training via Besant Technologies.</li>
+        <li>Completed Power BI hands-on Training via Besant Technologies.</li>
+        <li>Programming in Java Basics Certification - NPTEL.</li>
+        <li>Completed Excel Training via Besant Technologies.</li>
+        <li>Git, GitHub Crash-Course, Create Repository From Scratch!- Udemy.</li>
+        <li>Introduction to Html and Css Essentials (Basics) - Udemy.</li>
+
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="box">
+      <h2>CONTACT ME</h2>
+      <p>Let’s connect and build something awesome together!</p>
+      <div class="contact-icons">
+        <a href="mailto:rkofficial3399@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/7550334977" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/in/rk1634" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Rajesh1634" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 RAJESH KANNAN R P | All rights reserved.
+  </footer>
+
+</body>
+</html>
