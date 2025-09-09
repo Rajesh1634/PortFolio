@@ -39,36 +39,6 @@
       background: transparent;
       z-index: -1;
     }
-    @keyframes bubbleMove {
-      0% {
-        transform: translateY(100vh) scale(1);
-        opacity: 0;
-      }
-      20% {
-        opacity: 0.6;
-      }
-      100% {
-        transform: translateY(-10vh) scale(0.5);
-        opacity: 0;
-      }
-    }
-    body.bubbles span {
-      position: fixed;
-      bottom: 0;
-      background: rgba(64, 224, 208, 0.15);
-      border-radius: 50%;
-      opacity: 0;
-      animation-name: bubbleMove;
-      animation-timing-function: ease-in;
-      animation-iteration-count: infinite;
-      box-shadow: 0 0 10px #40e0d0, 0 0 20px #40b8b2;
-    }
-    body.bubbles span:nth-child(1) { left: 10%; width: 40px; height: 40px; animation-duration: 10s; animation-delay: 0s; }
-    body.bubbles span:nth-child(2) { left: 25%; width: 60px; height: 60px; animation-duration: 12s; animation-delay: 2s;}
-    body.bubbles span:nth-child(3) { left: 40%; width: 30px; height: 30px; animation-duration: 8s; animation-delay: 4s; }
-    body.bubbles span:nth-child(4) { left: 55%; width: 50px; height: 50px; animation-duration: 11s; animation-delay: 1s; }
-    body.bubbles span:nth-child(5) { left: 70%; width: 35px; height: 35px; animation-duration: 9s; animation-delay: 3s; }
-    body.bubbles span:nth-child(6) { left: 85%; width: 45px; height: 45px; animation-duration: 13s; animation-delay: 5s; }
     header {
       background: #000000;
       padding: 25px 0 15px 0;
@@ -101,24 +71,23 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    nav a, nav button {
+    nav a {
       background-color: #000000;
       color: #40e0d0;
       font-weight: 700;
       padding: 12px 24px;
-      min-width: 130px;
+      min-width: 110px;
       text-align: center;
       border: 2px solid #40e0d0;
       border-radius: 6px;
       text-decoration: none;
-      cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.4s;
       box-shadow: 0 0 6px rgba(64, 224, 208, 0.7);
       user-select: none;
       font-size: 1rem;
     }
-    nav a:hover, nav button:hover,
-    nav a:focus, nav button:focus {
+    nav a:hover,
+    nav a:focus {
       background-color: #40e0d0;
       color: #000000;
       box-shadow: 0 0 15px #40e0d0;
@@ -138,7 +107,6 @@
       padding: 30px 40px;
       box-shadow: 0 0 20px #40e0d0;
       border: 2px solid #40e0d0;
-      position: relative;
       color: #40e0d0;
       font-weight: bold;
     }
@@ -150,7 +118,6 @@
       letter-spacing: 1px;
       font-weight: bold;
     }
-    /* About Section */
     #about {
       display: flex;
       gap: 40px;
@@ -182,13 +149,12 @@
       object-fit: cover;
       filter: drop-shadow(0 0 7px #40e0d0);
     }
-    /* Cert Training horizontal scroll */
+    /* Certifications & Training horizontal boxes */
     #cert-training .horizontal-section {
       display: flex;
       gap: 24px;
       overflow-x: auto;
       padding: 20px 0;
-      margin-bottom: 0;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
     }
@@ -228,7 +194,7 @@
     }
     .horizontal-box ul {
       padding-left: 20px;
-      list-style-type: disc;
+      list-style: disc;
       margin-top: 0;
       flex-grow: 1;
     }
@@ -238,7 +204,7 @@
       color: #a1f1eb;
       line-height: 1.4;
     }
-    /* Projects Section */
+    /* Projects section fix */
     #projects {
       padding-top: 0;
     }
@@ -260,9 +226,8 @@
       padding: 18px 20px;
       box-shadow: 0 0 20px #40e0d0;
       border: 2px solid #40e0d0;
-      min-width: 280px;
+      flex: 1 1 280px;
       max-width: 320px;
-      flex: 1 1 300px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -271,11 +236,6 @@
       color: #40e0d0;
       font-weight: bold;
       transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    }
-    .project-item:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 40px #40f0d0, 0 0 50px #00e7cf;
-      border-color: #00e7cf;
     }
     .project-item img {
       width: 100%;
@@ -294,7 +254,12 @@
       color: #a1f1eb;
       flex-grow: 1;
     }
-    /* Education Section */
+    .project-item:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 40px #40f0d0, 0 0 50px #00e7cf;
+      border-color: #00e7cf;
+    }
+    /* Education section */
     #education ul {
       padding-left: 0;
       list-style: none;
@@ -315,16 +280,16 @@
       background: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%2340e0d0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M2 18L32 2l30 16-30 16-30-16z"/><path d="M14 20v20h8v-12h10v18h8V20"/></svg>') no-repeat center center;
       background-size: contain;
     }
-    /* Certifications Section */
+    /* Certifications list */
     #certifications {
       background: #000000;
       border-radius: 16px;
-      margin-bottom: 40px;
       padding: 30px 40px;
       box-shadow: 0 0 20px #40e0d0;
       border: 2px solid #40e0d0;
       color: #40e0d0;
       font-weight: bold;
+      margin-bottom: 40px;
     }
     #certifications h2 {
       font-size: 2rem;
@@ -333,7 +298,6 @@
       padding-bottom: 8px;
       letter-spacing: 1px;
       font-weight: bold;
-      text-shadow: none;
     }
     #certifications ul {
       list-style: none;
@@ -357,10 +321,7 @@
       background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%2300A94F" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="%2300A94F" stroke-width="2" fill="%2300A94F"/><polygon points="10 15 7 12 8.4 10.6 10 12.2 15.6 6.6 17 8" fill="white"/></svg>') no-repeat center center;
       background-size: contain;
     }
-    /* Extra Curricular Section */
-    #extra-curricular {
-      margin-bottom: 40px;
-    }
+    /* Extra Curricular horizontal */
     #extra-curricular .horizontal-section {
       display: flex;
       gap: 24px;
@@ -405,7 +366,7 @@
     }
     #extra-curricular .horizontal-box ul {
       padding-left: 20px;
-      list-style-type: disc;
+      list-style: disc;
       margin-top: 0;
       flex-grow: 1;
     }
@@ -415,7 +376,7 @@
       color: #a1f1eb;
       line-height: 1.4;
     }
-    /* Contact Section */
+    /* Contact section */
     #contact {
       text-align: center;
       padding: 30px 40px;
@@ -444,7 +405,7 @@
     .about-contact-links a:hover {
       transform: scale(1.2);
     }
-    /* Icon styles */
+    /* Icons */
     .icon-whatsapp {
       fill: none;
       stroke: #25D366;
