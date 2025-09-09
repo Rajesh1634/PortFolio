@@ -15,7 +15,7 @@
     color: #40e0d0;
     font-weight: bold;
     line-height: 1.6;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
     position: relative;
     z-index: 1;
@@ -206,20 +206,30 @@
   #projects {
     padding-top: 0;
   }
+  /* Grid with 3 columns */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    justify-items: center;
   }
+  /* For last 2 project items in second row - make them wider and centered */
   .projects-grid.two-last-centered {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
   }
-  .projects-grid.two-last-centered > a {
+  .projects-grid.two-last-centered > a:nth-last-child(2),
+  .projects-grid.two-last-centered > a:last-child {
+    grid-column: span 1;
     max-width: 400px;
-    width: 100%;
   }
+  /* Center the last two items as a group */
+  .projects-grid.two-last-centered > a:nth-last-child(2) {
+    justify-self: end;
+  }
+  .projects-grid.two-last-centered > a:last-child {
+    justify-self: start;
+  }
+  /* Project card styling */
   .project-item {
     background: #001a1a;
     border-radius: 12px;
@@ -259,6 +269,8 @@
     box-shadow: 0 0 40px #40f0d0, 0 0 50px #00e7cf;
     border-color: #00e7cf;
   }
+  /* The rest of your sections styles kept same as before ... */
+  /* Other sections styling omitted to save space */
   footer {
     text-align: center;
     color: #40e0d0;
@@ -286,7 +298,7 @@
     <div class="about-text">
       <h2>About Me</h2>
       <p>Hello! I am Rajesh Kannan RP, An aspiring Data & Business Analyst with a passion for transforming raw data into actionable insights that support smarter business decisions. Skilled in Excel, SQL, and Power BI, I bring the ability to analyze trends, create interactive dashboards, and communicate insights effectively.
-         With a completed Data Analytics course and hands-on project experience, I combine analytical thinking and business understanding to solve problems and deliver measurable impact. My strengths in data storytelling, problem-solving, and collaboration make me a strong fit for both Data Analyst and Business Analyst roles.</p>
+      With a completed Data Analytics course and hands-on project experience, I combine analytical thinking and business understanding to solve problems and deliver measurable impact. My strengths in data storytelling, problem-solving, and collaboration make me a strong fit for both Data Analyst and Business Analyst roles.</p>
     </div>
     <div class="about-photo">
       <img src="https://raw.githubusercontent.com/Rajesh1634/PortFolio/main/BeautyPlusCam_20240718193127866_save.jpg" alt="Rajesh Kannan RP Profile Photo"/>
