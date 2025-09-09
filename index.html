@@ -128,11 +128,13 @@
       max-width: 1100px;
       margin: 40px auto 100px;
       padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
     }
     section {
       background: #000000;
       border-radius: 16px;
-      margin-bottom: 40px;
       padding: 30px 40px;
       box-shadow: 0 0 20px #40e0d0;
       border: 2px solid #40e0d0;
@@ -148,63 +150,7 @@
       letter-spacing: 1px;
       font-weight: bold;
     }
-    /* Horizontal scrolling container for cert training tools */
-    #cert-training .horizontal-section {
-      display: flex;
-      gap: 24px;
-      overflow-x: auto;
-      padding: 20px 0;
-      margin-bottom: 40px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-    #cert-training .horizontal-section::-webkit-scrollbar {
-      height: 8px;
-    }
-    #cert-training .horizontal-section::-webkit-scrollbar-thumb {
-      background: #40e0d0aa;
-      border-radius: 4px;
-    }
-    #cert-training .horizontal-section::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    /* Each tool box */
-    .horizontal-box {
-      flex: 0 0 300px;
-      background: #000000;
-      border-radius: 16px;
-      padding: 16px 20px 24px 20px;
-      box-shadow: 0 0 20px #40e0d0;
-      border: 2px solid #40e0d0;
-      color: #40e0d0;
-      font-weight: bold;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      scroll-snap-align: start;
-      cursor: default;
-      min-height: 260px;
-    }
-    .horizontal-box h3 {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-      font-weight: 700;
-      border-bottom: 2px solid #40e0d0;
-      padding-bottom: 6px;
-      letter-spacing: 1px;
-    }
-    .horizontal-box ul {
-      padding-left: 20px;
-      list-style-type: disc;
-      margin-top: 0;
-    }
-    .horizontal-box ul li {
-      margin-bottom: 8px;
-      font-size: 1.05rem;
-      color: #a1f1eb;
-      line-height: 1.4;
-    }
-    /* Other sections styles remain same from your previous code */
+    /* About Section */
     #about {
       display: flex;
       gap: 40px;
@@ -236,6 +182,119 @@
       object-fit: cover;
       filter: drop-shadow(0 0 7px #40e0d0);
     }
+    /* Cert Training horizontal scroll */
+    #cert-training .horizontal-section {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding: 20px 0;
+      margin-bottom: 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    #cert-training .horizontal-section::-webkit-scrollbar {
+      height: 8px;
+    }
+    #cert-training .horizontal-section::-webkit-scrollbar-thumb {
+      background: #40e0d0aa;
+      border-radius: 4px;
+    }
+    #cert-training .horizontal-section::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .horizontal-box {
+      flex: 0 0 300px;
+      background: #000000;
+      border-radius: 16px;
+      padding: 16px 20px 24px 20px;
+      box-shadow: 0 0 20px #40e0d0;
+      border: 2px solid #40e0d0;
+      color: #40e0d0;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      scroll-snap-align: start;
+      cursor: default;
+      min-height: 260px;
+    }
+    .horizontal-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+      border-bottom: 2px solid #40e0d0;
+      padding-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .horizontal-box ul {
+      padding-left: 20px;
+      list-style-type: disc;
+      margin-top: 0;
+      flex-grow: 1;
+    }
+    .horizontal-box ul li {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      color: #a1f1eb;
+      line-height: 1.4;
+    }
+    /* Projects Section */
+    #projects {
+      padding-top: 0;
+    }
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .projects-row {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+    .project-item {
+      background: #001a1a;
+      border-radius: 12px;
+      padding: 18px 20px;
+      box-shadow: 0 0 20px #40e0d0;
+      border: 2px solid #40e0d0;
+      min-width: 280px;
+      max-width: 320px;
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      color: #40e0d0;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .project-item:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 40px #40f0d0, 0 0 50px #00e7cf;
+      border-color: #00e7cf;
+    }
+    .project-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      box-shadow: 0 0 25px #00e7cf;
+    }
+    .project-item h3 {
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .project-item p {
+      font-size: 1rem;
+      color: #a1f1eb;
+      flex-grow: 1;
+    }
+    /* Education Section */
     #education ul {
       padding-left: 0;
       list-style: none;
@@ -256,19 +315,157 @@
       background: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%2340e0d0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M2 18L32 2l30 16-30 16-30-16z"/><path d="M14 20v20h8v-12h10v18h8V20"/></svg>') no-repeat center center;
       background-size: contain;
     }
-    #projects {
-      padding-top: 0;
+    /* Certifications Section */
+    #certifications {
+      background: #000000;
+      border-radius: 16px;
+      margin-bottom: 40px;
+      padding: 30px 40px;
+      box-shadow: 0 0 20px #40e0d0;
+      border: 2px solid #40e0d0;
+      color: #40e0d0;
+      font-weight: bold;
     }
-    .projects-grid {
+    #certifications h2 {
+      font-size: 2rem;
+      margin-bottom: 22px;
+      border-bottom: 3px solid #40e0d0;
+      padding-bottom: 8px;
+      letter-spacing: 1px;
+      font-weight: bold;
+      text-shadow: none;
+    }
+    #certifications ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    #certifications li {
       display: flex;
-      flex-direction: column;
-      gap: 30px;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      padding-left: 28px;
+      position: relative;
     }
-    .projects-row {
+    #certifications li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      width: 22px;
+      height: 22px;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%2300A94F" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" stroke="%2300A94F" stroke-width="2" fill="%2300A94F"/><polygon points="10 15 7 12 8.4 10.6 10 12.2 15.6 6.6 17 8" fill="white"/></svg>') no-repeat center center;
+      background-size: contain;
+    }
+    /* Extra Curricular Section */
+    #extra-curricular {
+      margin-bottom: 40px;
+    }
+    #extra-curricular .horizontal-section {
       display: flex;
       gap: 24px;
+      overflow-x: auto;
+      padding: 20px 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    #extra-curricular .horizontal-section::-webkit-scrollbar {
+      height: 8px;
+    }
+    #extra-curricular .horizontal-section::-webkit-scrollbar-thumb {
+      background: #40e0d0aa;
+      border-radius: 4px;
+    }
+    #extra-curricular .horizontal-section::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #extra-curricular .horizontal-box {
+      flex: 0 0 300px;
+      background: #000000;
+      border-radius: 16px;
+      padding: 16px 20px 24px 20px;
+      box-shadow: 0 0 20px #40e0d0;
+      border: 2px solid #40e0d0;
+      color: #40e0d0;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      scroll-snap-align: start;
+      cursor: default;
+      min-height: 240px;
+    }
+    #extra-curricular .horizontal-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+      border-bottom: 2px solid #40e0d0;
+      padding-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    #extra-curricular .horizontal-box ul {
+      padding-left: 20px;
+      list-style-type: disc;
+      margin-top: 0;
+      flex-grow: 1;
+    }
+    #extra-curricular .horizontal-box ul li {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      color: #a1f1eb;
+      line-height: 1.4;
+    }
+    /* Contact Section */
+    #contact {
+      text-align: center;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #40e0d0;
+      border: 2px solid #40e0d0;
+      font-weight: bold;
+      color: #40e0d0;
+      margin-bottom: 40px;
+    }
+    .about-contact-links {
+      display: flex;
+      gap: 30px;
       justify-content: center;
-      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 15px;
+    }
+    .about-contact-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+      cursor: pointer;
+      color: #40e0d0;
+    }
+    .about-contact-links a:hover {
+      transform: scale(1.2);
+    }
+    /* Icon styles */
+    .icon-whatsapp {
+      fill: none;
+      stroke: #25D366;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      width: 32px;
+      height: 32px;
+    }
+    .icon-whatsapp path:first-child {
+      fill: #25D366;
+      stroke: none;
+    }
+    a.github-wrapper {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 2px solid #40e0d0;
+      padding: 4px;
+      box-sizing: content-box;
     }
     footer {
       text-align: center;
@@ -305,11 +502,9 @@ With a completed Data Analytics course and hands-on project experience, I combin
         <img src="https://raw.githubusercontent.com/Rajesh1634/PortFolio/main/BeautyPlusCam_20240718193127866_save.jpg" alt="Rajesh Kannan RP Profile Photo"/>
       </div>
     </section>
-    <!-- Certifications & Training Section with horizontal scroll boxes -->
     <section id="cert-training">
       <h2>Certifications & Training</h2>
       <div class="horizontal-section">
-        <!-- MySQL box -->
         <div class="horizontal-box">
           <h3>MySQL</h3>
           <ul>
@@ -324,7 +519,6 @@ With a completed Data Analytics course and hands-on project experience, I combin
             <li>CRUD Operations</li>
           </ul>
         </div>
-        <!-- Power BI box -->
         <div class="horizontal-box">
           <h3>Power BI</h3>
           <ul>
@@ -342,7 +536,6 @@ With a completed Data Analytics course and hands-on project experience, I combin
             <li>Publishing Reports</li>
           </ul>
         </div>
-        <!-- Microsoft Excel box -->
         <div class="horizontal-box">
           <h3>Microsoft Excel</h3>
           <ul>
@@ -358,7 +551,6 @@ With a completed Data Analytics course and hands-on project experience, I combin
             <li>Date Functions</li>
           </ul>
         </div>
-        <!-- Python box -->
         <div class="horizontal-box">
           <h3>Python</h3>
           <ul>
@@ -415,7 +607,7 @@ With a completed Data Analytics course and hands-on project experience, I combin
       <ul>
         <li><strong>Bachelor of Technology (Information Technology)</strong><br />PSNA College of Engineering and Technology, Dindigul | 2020 - 2024</li>
         <li>Class - 12th | THE TVS LAKSHMI MHSS, Madurai | 2020</li>
-        <li>Class - 10th | THE SEVENTH DAY ADVENTIST MHSS , Madurai | 2018 </li>
+        <li>Class - 10th | THE SEVENTH DAY ADVENTIST MHSS , Madurai | 2018</li>
       </ul>
     </section>
     <section id="certifications">
