@@ -67,7 +67,6 @@
     body.bubbles span:nth-child(4) { left: 55%; width: 50px; height: 50px; animation-duration: 11s; animation-delay: 1s; }
     body.bubbles span:nth-child(5) { left: 70%; width: 35px; height: 35px; animation-duration: 9s; animation-delay: 3s; }
     body.bubbles span:nth-child(6) { left: 85%; width: 45px; height: 45px; animation-duration: 13s; animation-delay: 5s; }
-
     header {
       background: #000000;
       padding: 25px 0 15px 0;
@@ -337,6 +336,59 @@
       padding: 4px;
       box-sizing: content-box;
     }
+
+    /* New horizontal sections and boxes */
+    .horizontal-section {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding: 20px 0;
+      margin-bottom: 40px;
+    }
+    .horizontal-section::-webkit-scrollbar {
+      height: 8px;
+    }
+    .horizontal-section::-webkit-scrollbar-thumb {
+      background: #40e0d0aa;
+      border-radius: 4px;
+    }
+    .horizontal-section::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .horizontal-box {
+      flex: 0 0 300px;
+      background: #000000;
+      border-radius: 16px;
+      padding: 16px 20px 24px 20px;
+      box-shadow: 0 0 20px #40e0d0;
+      border: 2px solid #40e0d0;
+      color: #40e0d0;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      scroll-snap-align: start;
+      cursor: default;
+    }
+    .horizontal-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+      border-bottom: 2px solid #40e0d0;
+      padding-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .horizontal-box p, .horizontal-box ul {
+      font-size: 1.05rem;
+      color: #a1f1eb;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    .horizontal-box ul {
+      padding-left: 20px;
+      list-style-type: disc;
+      margin-top: 0;
+    }
   </style>
 </head>
 <body class="bubbles">
@@ -345,25 +397,43 @@
     <p class="designation">Data Analyst / Business Analyst</p>
     <nav>
       <a href="#about">About Me</a>
+      <a href="#cert-training">Certifications & Training</a>
       <a href="#projects">Projects</a>
       <a href="#education">Education</a>
       <a href="#certifications">Certifications</a>
+      <a href="#extra-curricular">Extra Curricular</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
   <div class="container">
     <section id="about">
       <div class="about-text">
         <h2>About Me</h2>
         <p>
           Hello! I am Rajesh Kannan RP, An aspiring Data & Business Analyst with a passion for transforming raw data into actionable insights that support smarter business decisions. Skilled in Excel, SQL, and Power BI, I bring the ability to analyze trends, create interactive dashboards, and communicate insights effectively.
-
 With a completed Data Analytics course and hands-on project experience, I combine analytical thinking and business understanding to solve problems and deliver measurable impact. My strengths in data storytelling, problem-solving, and collaboration make me a strong fit for both Data Analyst and Business Analyst roles.
         </p>
       </div>
       <div class="about-photo">
         <img src="https://raw.githubusercontent.com/Rajesh1634/PortFolio/main/BeautyPlusCam_20240718193127866_save.jpg" alt="Rajesh Kannan RP Profile Photo"/>
+      </div>
+    </section>
+
+    <!-- New Certifications & Training Section -->
+    <section id="cert-training">
+      <h2>Certifications & Training</h2>
+      <div class="horizontal-section">
+        <div class="horizontal-box">
+          <h3>Data Analytics Certification - Besant Technologies</h3>
+          <p><strong>October 2024 - July 2025</strong></p>
+          <p><strong>Tools & Concepts Covered:</strong></p>
+          <ul>
+            <li><strong>MySQL:</strong> Joins, Subqueries, Group By, Stored Procedures, Triggers, Normalization, Views, Constraints, CRUD Operations.</li>
+            <li><strong>Power BI:</strong> DAX Functions, Power Query, ETL Process, Data Modeling, KPI Metrics, Interactive Dashboards, Slicers, Drillthrough, Bookmarks, Data Transformation, Relationships, Publishing Reports.</li>
+            <li><strong>Microsoft Excel:</strong> Pivot Tables, Conditional Formatting, VLOOKUP/XLOOKUP, Charts, Data Validation, Sorting, Filtering, Dashboard Creation, IF Statements, Date Functions.</li>
+            <li><strong>Python:</strong> Data Types, Operators, Control Flow, Loops, Functions, File Handling, Exception Handling, OOPs Concepts, Modules, Recursion.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -424,6 +494,35 @@ With a completed Data Analytics course and hands-on project experience, I combin
       </ul>
     </section>
 
+    <!-- Extra Curricular Activities Section -->
+    <section id="extra-curricular">
+      <h2>Extra Curricular Activities</h2>
+      <div class="horizontal-section">
+        <div class="horizontal-box">
+          <h3>Honors and Awards</h3>
+          <ul>
+            <li>Topper of the Year - 10th Grade, Seventh Day Adventist MHSS, 2018</li>
+            <li>2nd Prize - Essay Writing Competition, PSNA College of Engineering and Technology, 2023</li>
+            <li>2nd Prize - Paper Presentation (Ambulance Tracking), Anna University, Chennai, 2023</li>
+          </ul>
+        </div>
+        <div class="horizontal-box">
+          <h3>Leadership Experience</h3>
+          <ul>
+            <li>Captain - Handball Team, TVS Lakshmi MHSS, 2018-2020</li>
+            <li>Event Organizer - College Symposium, PSNA College of Engineering and Technology, 2023</li>
+          </ul>
+        </div>
+        <div class="horizontal-box">
+          <h3>Volunteer Experience</h3>
+          <ul>
+            <li>Member - IMath Club, PSNA College of Engineering and Technology, 2021-2024</li>
+            <li>Organizer - Rotaract Club, PSNA College of Engineering and Technology, 2022-2023</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <h2>Contact Me</h2>
       <p>Feel free to reach out via any of the platforms below:</p>
@@ -450,11 +549,9 @@ With a completed Data Analytics course and hands-on project experience, I combin
       </div>
     </section>
   </div>
-
   <footer>
     &copy; 2025 Rajesh Kannan RP
   </footer>
-
   <script>
     document.body.classList.add('bubbles');
     for(let i=0; i<7; i++){
@@ -469,6 +566,3 @@ With a completed Data Analytics course and hands-on project experience, I combin
   </script>
 </body>
 </html>
-
-
-
