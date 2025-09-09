@@ -149,7 +149,7 @@
       object-fit: cover;
       filter: drop-shadow(0 0 7px #40e0d0);
     }
-    /* Certifications & Training horizontal boxes */
+    /* Certifications Section horizontal boxes */
     #cert-training .horizontal-section {
       display: flex;
       gap: 24px;
@@ -204,20 +204,15 @@
       color: #a1f1eb;
       line-height: 1.4;
     }
-    /* Projects section fix */
+    /* Projects section using CSS Grid */
     #projects {
       padding-top: 0;
     }
     .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-    .projects-row {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 24px;
-      justify-content: center;
-      flex-wrap: wrap;
+      justify-items: center;
       align-items: stretch;
     }
     .project-item {
@@ -226,7 +221,7 @@
       padding: 18px 20px;
       box-shadow: 0 0 20px #40e0d0;
       border: 2px solid #40e0d0;
-      flex: 1 1 280px;
+      width: 100%;
       max-width: 320px;
       display: flex;
       flex-direction: column;
@@ -376,7 +371,7 @@
       color: #a1f1eb;
       line-height: 1.4;
     }
-    /* Contact section */
+    /* Contact Section */
     #contact {
       text-align: center;
       padding: 30px 40px;
@@ -405,7 +400,7 @@
     .about-contact-links a:hover {
       transform: scale(1.2);
     }
-    /* Icons */
+    /* Icon styles */
     .icon-whatsapp {
       fill: none;
       stroke: #25D366;
@@ -456,7 +451,7 @@
         <h2>About Me</h2>
         <p>
           Hello! I am Rajesh Kannan RP, An aspiring Data & Business Analyst with a passion for transforming raw data into actionable insights that support smarter business decisions. Skilled in Excel, SQL, and Power BI, I bring the ability to analyze trends, create interactive dashboards, and communicate insights effectively.
-With a completed Data Analytics course and hands-on project experience, I combine analytical thinking and business understanding to solve problems and deliver measurable impact. My strengths in data storytelling, problem-solving, and collaboration make me a strong fit for both Data Analyst and Business Analyst roles.
+          With a completed Data Analytics course and hands-on project experience, I combine analytical thinking and business understanding to solve problems and deliver measurable impact. My strengths in data storytelling, problem-solving, and collaboration make me a strong fit for both Data Analyst and Business Analyst roles.
         </p>
       </div>
       <div class="about-photo">
@@ -532,41 +527,37 @@ With a completed Data Analytics course and hands-on project experience, I combin
     <section id="projects">
       <h2>Projects</h2>
       <div class="projects-grid">
-        <div class="projects-row">
-          <a href="https://github.com/Rajesh1634/IntelliNote---Notes-Summarization" class="project-item" target="_blank" rel="noopener">
-            <img src="https://raw.githubusercontent.com/Moushv26/Images/main/data_analysis_python.jpeg" alt="Responsive Website" />
-            <h3>IntelliNote</h3>
-            <p>Built a fully responsive website using Python, AI, and APIs.</p>
-          </a>
-          <a href="https://github.com/Rajesh1634/Car-Sales-DashBoard" class="project-item" target="_blank" rel="noopener">
-            <img src="https://raw.githubusercontent.com/Moushv26/Images/main/data_analysis_excel.png" alt="Excel Data Dashboard" />
-            <h3>Excel Data Dashboard</h3>
-            <p>Interactive Excel dashboard for business insights.</p>
-          </a>
-          <a href="https://github.com/Rajesh1634/Loan-Management-System" class="project-item" target="_blank" rel="noopener">
-            <img src="https://raw.githubusercontent.com/Moushv26/Images/main/data_analysis_using_sql.jpg" alt="MySQL Data Analysis" />
-            <h3>MySQL Data Analysis</h3>
-            <p>Analyzed sales data using complex MySQL queries.</p>
-          </a>
-        </div>
-        <div class="projects-row">
-          <a href="https://github.com/Rajesh1634/-QC-Variance-Dashboard" class="project-item" target="_blank" rel="noopener">
-            <img src="https://raw.githubusercontent.com/Moushv26/Images/main/data_analysis_using_powerbi.jpg" alt="Power BI Dashboard" />
-            <h3>Power BI Dashboard</h3>
-            <p>Visualized key metrics with an interactive Power BI dashboard.</p>
-          </a>
-          <a href="https://raw.githubusercontent.com/Rajesh1634/PortFolio/main/data_analysis_tableau.jpg" class="project-item" target="_blank" rel="noopener">
-            <img src="https://raw.githubusercontent.com/Rajesh1634/PortFolio/main/data_analysis_tableau.jpg" alt="Customer Behavior Analysis" />
-            <h3>Customer Behavior Analysis</h3>
-            <p>Developed customer segmentation and behavior analysis using Tableau.</p>
-          </a>
-        </div>
+        <a href="https://github.com/Rajesh1634/IntelliNote---Notes-Summarization" class="project-item" target="_blank" rel="noopener">
+          <img src="https://raw.githubusercontent.com/Moushv26/Images/main/data_analysis_python.jpeg" alt="Responsive Website" />
+          <h3>IntelliNote</h3>
+          <p>Built a fully responsive website using Python, AI, and APIs.</p>
+        </a>
+        <a href="https://github.com/Rajesh1634/Car-Sales-DashBoard" class="project-item" target="_blank" rel="noopener">
+          <img src="https://raw.githubusercontent.com/Moushv26/Images/main/data_analysis_excel.png" alt="Excel Data Dashboard" />
+          <h3>Excel Data Dashboard</h3>
+          <p>Interactive Excel dashboard for business insights.</p>
+        </a>
+        <a href="https://github.com/Rajesh1634/Loan-Management-System" class="project-item" target="_blank" rel="noopener">
+          <img src="https://raw.githubusercontent.com/Moushv26/Images/main/data_analysis_using_sql.jpg" alt="MySQL Data Analysis" />
+          <h3>MySQL Data Analysis</h3>
+          <p>Analyzed sales data using complex MySQL queries.</p>
+        </a>
+        <a href="https://github.com/Rajesh1634/-QC-Variance-Dashboard" class="project-item" target="_blank" rel="noopener">
+          <img src="https://raw.githubusercontent.com/Moushv26/Images/main/data_analysis_using_powerbi.jpg" alt="Power BI Dashboard" />
+          <h3>Power BI Dashboard</h3>
+          <p>Visualized key metrics with an interactive Power BI dashboard.</p>
+        </a>
+        <a href="https://raw.githubusercontent.com/Rajesh1634/PortFolio/main/data_analysis_tableau.jpg" class="project-item" target="_blank" rel="noopener">
+          <img src="https://raw.githubusercontent.com/Rajesh1634/PortFolio/main/data_analysis_tableau.jpg" alt="Customer Behavior Analysis" />
+          <h3>Customer Behavior Analysis</h3>
+          <p>Developed customer segmentation and behavior analysis using Tableau.</p>
+        </a>
       </div>
     </section>
     <section id="education">
       <h2>Education</h2>
       <ul>
-        <li><strong>Bachelor of Technology (Information Technology)</strong><br />PSNA College of Engineering and Technology, Dindigul | 2020 - 2024</li>
+        <li><strong>Bachelor of Technology (Information Technology)</strong><br>PSNA College of Engineering and Technology, Dindigul | 2020 - 2024</li>
         <li>Class - 12th | THE TVS LAKSHMI MHSS, Madurai | 2020</li>
         <li>Class - 10th | THE SEVENTH DAY ADVENTIST MHSS , Madurai | 2018</li>
       </ul>
